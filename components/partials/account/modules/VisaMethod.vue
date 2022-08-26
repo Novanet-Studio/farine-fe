@@ -1,25 +1,33 @@
 <template lang="html">
-  <div>
-    <form id="payment-form">
-      <div id="card-container"></div>
-      <div class="form-group">
-        <p>
-          Al realizar esta compra usted acepta
-          <a href="#" class="terms">nuestros términos y condiciones</a>.
-        </p>
-        <button
-          class="ps-btn ps-btn--fullwidth"
-          @click.prevent="handlePayment"
-          id="card-button"
-          type="button"
-        >
-          <p v-if="!loading" class="btn-pagar">Pagar</p>
-          <p v-else>...</p>
-        </button>
-      </div>
-    </form>
-    <div id="payment-status-container"></div>
-  </div>
+	<div>
+		<form id="payment-form">
+			<div v-if="loadingInit === true" class="text-center mb-5">
+				<p>Cargando</p>
+				<v-progress-circular
+					class="text-center mx-auto"
+					indeterminate
+					color="red"
+				></v-progress-circular>
+			</div>
+			<div id="card-container"></div>
+			<div class="form-group">
+				<p>
+					Al realizar esta compra usted acepta
+					<a href="#" class="terms">nuestros términos y condiciones</a>.
+				</p>
+				<button
+					class="ps-btn ps-btn--fullwidth"
+					@click.prevent="handlePayment"
+					id="card-button"
+					type="button"
+				>
+					<p v-if="!loading" class="btn-pagar">Pagar</p>
+					<p v-else>...</p>
+				</button>
+			</div>
+		</form>
+		<div id="payment-status-container"></div>
+	</div>
 </template>
 
 <script>
@@ -28,115 +36,120 @@ import { mapState } from "vuex";
 import ProductRepository from "~/repositories/ProductoRepository";
 
 export default {
-  name: "VisaMethod",
-  data: () => ({
-    card: null,
-    loading: false,
-    resumen: "",
-    productMail: "",
-    productosFinalesHtml: "",
-    productsCart: "",
-  }),
-  computed: {
-    cart() {
-      return this.$cookies.get("cart");
-    },
-    cookie() {
-      const cookieInfo = this.$cookies.get("shippingInfo", { parseJSON: true });
-      return cookieInfo;
-    },
-    email() {
-      return this.cookie.email;
-    },
-    customerId() {
-      return this.$cookies.get("auth").user.customer_id;
-    },
-    user() {
-      return this.$cookies.get("auth").user;
-    },
-    fullName() {
-      const name = this.cookie.name + " " + this.cookie.lastName;
-      return name;
-    },
-    token() {
-      const token = this.$cookies.get("auth").jwt;
-      return token;
-    },
-  },
-  mounted: async function() {
-    await this.getProducts(this.cart.cartItems);
-    const payments = Square.payments(
-      process.env.SQUARE_APPLICATION_ID,
-      process.env.SQUARE_LOCATION_ID
-    );
-    const card = await payments.card();
-    await card.attach("#card-container");
-    this.card = card;
-    console.log(this.cart);
-    console.log(this.cookie);
-    // this.invoicesTest(this.cart.cartItems)
-    console.log("la cookie", this.cookie);
-  },
-  methods: {
-    async handlePayment() {
-      const cardButton = document.getElementById("card-button");
-      cardButton.disabled = true;
-      //creando token para la tarjeta
-      this.card
-        .tokenize()
-        .then(async (res) => {
-          if (res.token) {
-            this.loading = true;
-            var token = res.token;
-            var idempotencyKeyGen = uuidv4();
-            var payment = {
-              idempotencyKey: idempotencyKeyGen,
-              locationId: process.env.SQUARE_LOCATION_ID,
-              sourceId: token,
-              customerId: this.customerId,
-              amountMoney: {
-                amount: parseInt(this.cart.amount) * 100,
-                currency: "USD",
-              },
-              buyerEmailAddress: this.email,
-              shippingAddress: {
-                addressLine1: `${this.cookie.address}`,
-                home: this.cookie.home,
-                locality: this.cookie.city,
-                postalCode: this.cookie.zipCode,
-                country: "VE",
-                phone: this.cookie.phone,
-              },
-              billingAddress: {},
-              note: this.fullName,
-            };
-            const billingResponse = await this.hasBilling()
-              .then((res) => {
-                return res;
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-            console.log("hay billing? ", billingResponse);
-            if (billingResponse !== false) {
-              console.log(billingResponse);
-              payment.billingAddress = billingResponse;
-            } else {
-              payment.billingAddress = {
-                addressLine1: "no aplicable",
-                locality: "no aplicable",
-                postalCode: "00000",
-                country: "VE",
-              };
-            }
-            console.log(payment);
-            this.createPayment(payment);
-          }
-        })
-        .catch((error) => {
-          return console.log(error);
-        });
-    },
+	name: "VisaMethod",
+	data: () => ({
+		card: null,
+		loading: false,
+		resumen: "",
+		productMail: "",
+		productosFinalesHtml: "",
+		productsCart: "",
+		loadingInit: true,
+	}),
+	computed: {
+		cart() {
+			return this.$cookies.get("cart");
+		},
+		cookie() {
+			const cookieInfo = this.$cookies.get("shippingInfo", { parseJSON: true });
+			return cookieInfo;
+		},
+		email() {
+			return this.cookie.email;
+		},
+		customerId() {
+			return this.$cookies.get("auth").user.customer_id;
+		},
+		user() {
+			return this.$cookies.get("auth").user;
+		},
+		fullName() {
+			const name = this.cookie.name + " " + this.cookie.lastName;
+			return name;
+		},
+		token() {
+			const token = this.$cookies.get("auth").jwt;
+			return token;
+		},
+	},
+	mounted: async function() {
+		// await this.getProducts(this.cart.cartItems);
+		const payments = Square.payments(
+			process.env.SQUARE_APPLICATION_ID,
+			process.env.SQUARE_LOCATION_ID
+		);
+		const card = await payments.card();
+		await card.attach("#card-container");
+		this.card = card;
+		if (this.card !== null) {
+			this.loadingInit = false;
+		}
+		// console.log(this.cart);
+		// console.log(this.cookie);
+		// this.invoicesTest(this.cart.cartItems)
+		// console.log("la cookie", this.cookie);
+	},
+	methods: {
+		async handlePayment() {
+			this.loading = true;
+
+			const cardButton = document.getElementById("card-button");
+			cardButton.disabled = true;
+			//creando token para la tarjeta
+			this.card
+				.tokenize()
+				.then(async (res) => {
+					if (res.token) {
+						var token = res.token;
+						var idempotencyKeyGen = uuidv4();
+						var payment = {
+							idempotencyKey: idempotencyKeyGen,
+							locationId: process.env.SQUARE_LOCATION_ID,
+							sourceId: token,
+							customerId: this.customerId,
+							amountMoney: {
+								amount: parseInt(this.cart.amount) * 100,
+								currency: "USD",
+							},
+							buyerEmailAddress: this.email,
+							shippingAddress: {
+								addressLine1: `${this.cookie.address}`,
+								home: this.cookie.home,
+								locality: this.cookie.city,
+								postalCode: this.cookie.zipCode,
+								country: "VE",
+								phone: this.cookie.phone,
+							},
+							billingAddress: {},
+							note: this.fullName,
+						};
+						const billingResponse = await this.hasBilling()
+							.then((res) => {
+								return res;
+							})
+							.catch((error) => {
+								console.log(error);
+							});
+						// console.log("hay billing? ", billingResponse);
+						if (billingResponse !== false) {
+							// console.log(billingResponse);
+							payment.billingAddress = billingResponse;
+						} else {
+							payment.billingAddress = {
+								addressLine1: "no aplicable",
+								locality: "no aplicable",
+								postalCode: "00000",
+								country: "VE",
+							};
+						}
+						// console.log(payment);
+						this.createPayment(payment);
+					}
+				})
+				.catch((error) => {
+					return console.log(error);
+				});
+		},
 
     async createPayment(paymentBody) {
       const respuesta = await this.$fire.functions.httpsCallable("payment");
