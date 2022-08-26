@@ -50,50 +50,14 @@ export const mutations = {
 };
 
 export const actions = {
-    // async getProducts({ commit }, payload) {
-    //     const reponse = await Repository.get(
-    //         `${baseUrl}/products?${serializeQuery(payload)}`
-    //     )
-    //         .then(response => {
-    //             commit('setProducts', response.data);
-    //             return response.data;
-    //         })
-    //         .catch(error => ({ error: JSON.stringify(error) }));
-    //     return reponse;
-    // },
-
-    // async getTotalRecords({ commit }, payload) {
-    //     const reponse = await Repository.get(`${baseUrl}/products/count`)
-    //         .then(response => {
-    //             commit('setTotal', response.data);
-    //             return response.data;
-    //         })
-    //         .catch(error => ({ error: JSON.stringify(error) }));
-    //     return reponse;
-    // },
-
-    // async getProductsById({ commit }, payload) {
-    //     const reponse = await Repository.get(`${baseUrl}/products/${payload}`)
-    //         .then(response => {
-    //             commit('setProduct', response.data);
-    //             return response.data;
-    //         })
-    //         .catch(error => ({ error: JSON.stringify(error) }));
-    //     return reponse;
-    // },
-
-    // async getProductByKeyword({ commit }, payload) {
-    //     const reponse = await Repository.get(
-    //         `${baseUrl}/products?${serializeQuery(payload)}`
-    //     )
-    //         .then(response => {
-    //             commit('setSearchResults', response.data);
-    //             commit('setTotal', response.data.length);
-    //             return response.data;
-    //         })
-    //         .catch(error => ({ error: JSON.stringify(error) }));
-    //     return reponse;
-    // },
+	async getCategories({ commit }, payload) {
+		const response = Repository.get(
+			`${baseUrl}/categories/?populate[products][populate]=%2A`
+		).then((response) => {
+			return response.data.data;
+		});
+		return response;
+	},
 
     async getCartProducts({ commit }, payload) {
         let query = '';
@@ -155,43 +119,26 @@ export const actions = {
 
     },
 
-    // async getCompareProducts({ commit }, payload) {
-    //     let query = '';
-    //     payload.forEach(item => {
-    //         if (query === '') {
-    //             query = `id=${item}`;
-    //         } else {
-    //             query = query + `&id=${item}`;
-    //         }
-    //     });
-    //     const reponse = await Repository.get(`${baseUrl}/products?${query}`)
-    //         .then(response => {
-    //             commit('setCompareItems', response.data);
-    //             return response.data;
-    //         })
-    //         .catch(error => ({ error: JSON.stringify(error) }));
-    //     return reponse;
-    // },
+	async getProductBrands({ commit }) {
+		const reponse = await Repository.get(`${baseUrl}/brands`)
+			.then((response) => {
+				commit("setBrands", response.data);
+				return response.data;
+			})
+			.catch((error) => ({ error: JSON.stringify(error) }));
+		return reponse;
+	},
 
-    async getProductBrands({ commit }) {
-        const reponse = await Repository.get(`${baseUrl}/brands`)
-            .then(response => {
-                commit('setBrands', response.data);
-                return response.data;
-            })
-            .catch(error => ({ error: JSON.stringify(error) }));
-        return reponse;
-    },
-
-    async getProductCategories({ commit }) {
-        const reponse = await Repository.get(`${baseUrl}/product-categories`)
-            .then(response => {
-                commit('setCategories', response.data);
-                return response.data;
-            })
-            .catch(error => ({ error: JSON.stringify(error) }));
-        return reponse;
-    },
+	async getProductByCategories({ commit }) {
+		const reponse = await Repository.get(
+			`${baseUrl}/products?populate[products][populate]=%2A&filters[category][id]=${category}`
+		)
+			.then((response) => {
+				return response.data.data;
+			})
+			.catch((error) => ({ error: JSON.stringify(error) }));
+		return reponse;
+	},
 
     async getProductsByBrands({ commit }, payload) {
         let query = '';

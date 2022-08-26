@@ -47,15 +47,18 @@ export const actions = {
             })
             .catch(error => ({ error: JSON.stringify(error) }));
 
-        return response;
-    },
-    async getAllInvoices({commit}, payload){
-        const userId = payload
-        const response = await Repository.get(`${baseUrl}/invoices?populate=*&filters[user_id]=${userId}`)
-            .then(response => {
-                return response.data
-            })
-            .catch(error => ({ error: JSON.stringify(error) }));
+		return response;
+	},
+	async getAllInvoices({ commit }, payload) {
+		const userId = payload;
+		const response = await Repository.get(
+			`${baseUrl}/invoices?populate[products]late]=%2A&filters[user_id]=${userId}`
+		)
+			.then((response) => {
+				console.log("desde el store -====> invoice", response);
+				return response.data;
+			})
+			.catch((error) => ({ error: JSON.stringify(error) }));
 
         return response;
     },
