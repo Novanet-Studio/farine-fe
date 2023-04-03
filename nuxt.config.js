@@ -58,7 +58,6 @@ export default {
     "~/static/fonts/fontawesome/css/brands.css",
     "~/static/fonts/fontawesome/css/regular.css",
     "~/static/fonts/fontawesome/css/solid.css",
-    "~/static/css/bootstrap.min.css",
     "~/assets/scss/style.scss",
   ],
 
