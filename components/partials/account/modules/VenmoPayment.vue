@@ -478,7 +478,8 @@ export default {
 
             this.payment_merchant_info = res;
           }
-        });
+        })
+        .catch((err) => console.log("Venmo getPaymentInfo error", err));
     },
   },
 };

@@ -325,7 +325,8 @@ export default {
       };
 
       const data = {
-        amount: payment.monto / this.rateBs,
+        // amount: payment.monto / this.rateBs,
+        amount: payment.monto,
         order_id: this.invoice_id,
         paid: false,
         payment_id: payment.numero_confirmacion,
@@ -487,7 +488,10 @@ export default {
               this.rateBs = res.attributes.tasa_cambio;
             }
           }
-        });
+
+          this.rateBs = 0;
+        })
+        .catch(() => (this.rateBs = 24));
     },
   },
 };

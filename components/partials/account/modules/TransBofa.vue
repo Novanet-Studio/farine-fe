@@ -475,7 +475,8 @@ export default {
             console.log("====> estoooo payment", res);
             this.payment_merchant_info = res;
           }
-        });
+        })
+        .catch((err) => console.log("Trans_Bofa", err));
     },
   },
 };
