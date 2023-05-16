@@ -5,6 +5,25 @@ export default defineNuxtConfig({
   ssr: false,
   app: {
     head: {
+      title: 'Farine by Vane - Cachitos',
+      meta: [
+        { charset: 'utf-8' },
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1',
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Farine by Vane - Cachitos',
+        },
+      ],
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&amp;amp;subset=latin-ext',
+        },
+      ],
       script: [
         {
           type: 'module',
@@ -59,23 +78,22 @@ export default defineNuxtConfig({
 
   pwa: {
     meta: {
-      title: 'Tienda en mano',
-      name: 'Tienda en mano Aplicación web',
+      title: 'Farine by Vane',
+      name: 'Farine by Vane Aplicación web',
       author: 'Novanet Studio <info@novanet.studio>',
-      description: 'Tienda en online para vender tus productos online',
+      description: 'Tienda en mano de Farine by Vane',
       theme_color: '#fcd34d',
       lang: 'es',
     },
     manifest: {
-      name: 'Tienda en mano Aplicación web',
-      short_name: 'Tienda en mano',
-      description: 'Tienda en online para vender tus productos online',
+      name: 'Farine by Vane Aplicación web',
+      short_name: 'Farine by Vane',
+      description: 'Tienda en mano de Farine by Vane',
       start_url: '/',
       display: 'standalone',
-      background_color: '#ffffff',
-      theme_color: '#fcd34d',
+      background_color: '#feeed7',
     },
-    icon: { source: 'static/favicon.png' },
+    icon: { source: 'static/icon.png' },
     /*workbox: {
       enabled: true,
     },*/
