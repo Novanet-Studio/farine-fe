@@ -11,13 +11,15 @@ export default defineConfig({
   transformers: [transformerDirectives(), transformerVariantGroup()],
   theme: {
     colors: {
-      'color-1': '#feeed7',
-      'color-2': '#e36d65',
-      'color-3': '#f4f4f4',
-      'color-4': '#282932',
-      'color-5': '#161824',
-      'color-6': '#0c6dce',
-      'color-7': '#c0c0c0',
+      color: {
+        1: '#feeed7',
+        2: '#e36d65',
+        3: '#f4f4f4',
+        4: '#282932',
+        5: '#161824',
+        6: '#0c6dce',
+        7: '#c0c0c0',
+      },
     },
     breakpoints: {
       sm: '640px',
@@ -31,11 +33,11 @@ export default defineConfig({
     btn: 'w-full text-center py-4 inline-block text-sm border-transparent rounded-md bg-yellow-300 transition ease cursor-pointer hover:bg-yellow-500 active:bg-yellow-500',
     'btn--outline':
       'flex justify-center border !bg-transparent rounded-md border-yellow-400 text-yellow-500 hover:(!bg-yellow-500 !border-transparent !text-white)',
-    'header-actions': 'flex items-center justify-between md:justify-end',
+    'header-actions': 'flex items-center justify-between',
     'header-actions__link': 'flex relative transition ease',
-    'header-actions__icon': 'text-4xl',
+    'header-actions__icon': 'text-4xl text-[2.45rem]',
     'header-actions__indicator-wrapper':
-      'absolute bottom-2 -right-[6px] flex justify-center items-center w-[20px] h-[20px] text-white bg-dark-300 rounded-full',
+      'absolute bottom-0 -right-[3px] flex justify-center items-center w-[20px] h-[20px] text-white bg-color-2 rounded-full',
     'header-actions__indicator': 'text-xs leading-4 font-medium not-italic',
 
     'input-group': 'py-3 pt-2 first:mb-4',

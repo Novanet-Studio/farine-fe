@@ -2,7 +2,6 @@
   <div v-if="!auth.authenticated" class="user-area">
     <div class="user-area__icon-wrapper">
       <nuxt-link to="/login">
-        <!-- <i class="user-area__icon icon-user"></i> -->
         <ph-user class="user-area__icon" weight="light" />
       </nuxt-link>
     </div>
@@ -91,7 +90,7 @@ const handleLogout = () => {
 }
 
 .user-area__icon {
-  @apply text-4xl;
+  @apply header-actions__icon;
 }
 
 .user-area__menu-list {

@@ -9,7 +9,10 @@
           class="widgets__item"
         >
           <a class="widgets__link" :href="item.link">
-            <i :class="item.iconClass"></i>
+            <component
+              :is="item.icon"
+              v-bind="{ class: 'text-color-2 lg:text-xl', weight: 'light' }"
+            />
           </a>
           {{ item.text }}
         </li>
@@ -19,33 +22,34 @@
 </template>
 
 <script lang="ts" setup>
+import {
+  PhInstagramLogo,
+  PhWhatsappLogo,
+  PhEnvelope,
+} from '@phosphor-icons/vue';
+
 const socialNetworks = [
   {
-    link: 'https://www.instagram.com/fast-ecommerce/',
-    iconClass: 'fab fa-instagram',
-    text: '@fast-ecommerce',
-  },
-  {
-    link: 'https://www.facebook.com/people/fast-ecommerce',
-    iconClass: 'fa-brands fa-facebook',
-    text: 'fast-ecommerce',
+    link: 'https://www.instagram.com/coracuero/',
+    icon: PhInstagramLogo,
+    text: '@farinebyvane',
   },
   {
     link: '#',
-    iconClass: 'fa-brands fa-whatsapp',
-    text: '+58 412-12345654',
+    icon: PhWhatsappLogo,
+    text: '+58 412-3194827',
   },
   {
     link: '#',
-    iconClass: 'far fa-envelope',
-    text: 'fast@ecommerce.com',
+    icon: PhEnvelope,
+    text: 'vanessa@farinebyvane.com - farinebyvane@gmail.com',
   },
 ];
 </script>
 
 <style scoped>
 .widgets {
-  @apply pb-7 mx-4 lg:container lg:mx-auto;
+  @apply pb-7 mx-4 lg:(mx-auto);
 }
 
 .widgets__wrapper {
@@ -53,18 +57,18 @@ const socialNetworks = [
 }
 
 .widgets__title {
-  @apply text-xl mb-[10px] font-bold text-yellow-400;
+  @apply text-3xl pb-4 font-bold text-color-2;
 }
 
 .widgets__list {
-  @apply mt-7;
+  @apply mt-7 w-full;
 }
 
 .widgets__item {
-  @apply relative inline-block mr-[20px] align-top;
+  @apply relative inline-flex items-center mr-[20px] gap-1;
 }
 
 .widgets__link {
-  @apply text-yellow-400 inline-block text-lg;
+  @apply flex text-lg;
 }
 </style>

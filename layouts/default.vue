@@ -29,12 +29,12 @@
 }
 
 .default__wrapper {
-  @apply flex-auto backface-hidden flex flex-col min-h-screen max-w-full relative;
+  @apply flex-auto backface-hidden flex flex-col min-h-screen max-w-full;
 }
 .default__content {
-  @apply flex-auto max-w-full relative;
+  @apply flex-auto max-w-full;
 }
 .default__main {
-  @apply lg:container lg:mx-auto;
+  @apply;
 }
 </style>

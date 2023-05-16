@@ -38,14 +38,14 @@ const isOpen = ref(false);
 
 <style scoped>
 .navigation {
-  @apply relative flex flex-wrap items-center justify-between px-4 py-2 bg-yellow-100;
+  @apply relative flex flex-wrap items-center justify-between px-4 bg-color-1;
 }
 
 .navigation__wrapper {
-  @apply flex flex-col items-center justify-between w-full lg:container lg:mx-auto;
+  @apply flex flex-col items-center justify-between w-full lg:(mx-auto px-34);
 }
 
 .navigation__content {
-  @apply w-full text-center justify-center mt-4 flex-[1_0_100%] lg:(flex justify-start);
+  @apply w-full text-center justify-center mt-4 flex-[1_0_100%] lg:(flex justify-start mt-0);
 }
 </style>
