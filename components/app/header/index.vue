@@ -4,7 +4,7 @@
       <div class="header__container">
         <div class="header__brand">
           <nuxt-link class="header__link" to="/">
-            <img src="~/assets/img/logo.png" alt="martfury" />
+            <img src="~/assets/img/farine-logo.png" alt="Farine Logo" />
           </nuxt-link>
         </div>
         <div class="header__content">

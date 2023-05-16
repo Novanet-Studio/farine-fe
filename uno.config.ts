@@ -11,11 +11,13 @@ export default defineConfig({
   transformers: [transformerDirectives(), transformerVariantGroup()],
   theme: {
     colors: {
-      primary: '#FBBF24',
-      secondary: '',
-      tertiary: '',
-      'primary-alt': '#D1D5DB',
-      'secondary-alt': '',
+      'color-1': '#feeed7',
+      'color-2': '#e36d65',
+      'color-3': '#f4f4f4',
+      'color-4': '#282932',
+      'color-5': '#161824',
+      'color-6': '#0c6dce',
+      'color-7': '#c0c0c0',
     },
     breakpoints: {
       sm: '640px',
