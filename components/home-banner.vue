@@ -11,7 +11,7 @@
             :modules="[Navigation]"
           >
             <swiper-slide v-for="(image, index) in sliderImages" :key="index">
-              <img
+              <nuxt-img
                 class="banner__slider-image"
                 :src="image"
                 alt="Products of the brand"
@@ -23,13 +23,13 @@
       <div class="banner__right">
         <nuxt-link class="flex-1 flex">
           <img
-            src="~/assets/img/slider/home/promotion-1.jpeg"
+            src="~/assets/img/slider/home-1/promotion-1.jpeg"
             alt="Promotion 1"
           />
         </nuxt-link>
         <nuxt-link class="h-full flex-1">
           <img
-            src="~/assets/img/slider/home/promotion-2.jpeg"
+            src="~/assets/img/slider/home-1/promotion-2.jpeg"
             alt="Promotion 2"
           />
         </nuxt-link>
@@ -45,9 +45,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const sliderImages = [
-  'img/slider/1.jpg',
-  'img/slider/2.jpg',
-  'img/slider/3.jpg',
+  'slider/home-1/slide-1.jpg',
+  'slider/home-1/slide-1.jpeg',
 ];
 </script>
 
@@ -56,7 +55,9 @@ const sliderImages = [
 :global(.swiper-button-next),
 :global(.swiper-button-prev) {
   --swiper-navigation-size: 2rem;
-  --swiper-navigation-color: #fbbf24;
+  --swiper-navigation-color: #161824;
+  --swiper-navigation-sides-offset: 0;
+  @apply p-8 transition hover:(bg-color-1);
 }
 
 .banner {
@@ -68,15 +69,15 @@ const sliderImages = [
 }
 
 .banner__left {
-  @apply w-full min-h-full mb-4 lg:max-w-[calc(100%-390px)];
+  @apply w-full h-full mb-4 lg:max-w-[calc(100%-390px)];
 }
 
 .banner__slider {
-  @apply min-h-full relative;
+  @apply h-full relative;
 }
 
 .banner__slider-image {
-  @apply block w-full h-80 bg-center bg-cover lg:(h-full min-h-xl);
+  @apply block w-full h-80 bg-center bg-cover lg:(min-h-xl);
 }
 
 .banner__right {
