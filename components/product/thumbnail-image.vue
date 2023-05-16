@@ -23,5 +23,5 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const imageUrl = computed(() => props?.product?.image[0]?.formats?.small?.url);
+const imageUrl = computed(() => props?.product?.images[0]?.formats?.small?.url);
 </script>
