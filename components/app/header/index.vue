@@ -41,16 +41,19 @@ onUnmounted(() => {
 
 <style scoped>
 .header__wrapper {
-  @apply px-6 py-8 bg-color-1 border-b border-b-[#c0c0c0];
+  @apply px-4 py-8 bg-color-1 border-b border-b-[#c0c0c0] md:px-6;
 }
 
 .header--sticky {
   @apply fixed bg-color-1 top-0 left-0 z-20 w-full;
 }
 
-.header--sticky .navigation,
-.header--sticky .header__link {
+.header--sticky .navigation {
   @apply hidden;
+}
+
+.header--sticky .header__link {
+  @apply md:hidden;
 }
 
 .header--sticky {

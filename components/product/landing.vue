@@ -56,16 +56,12 @@ onMounted(async () => {
   @apply pb-20;
 }
 
-.landing__wrapper {
-  @apply max-w-[1650px] mx-auto px-[15px];
-}
-
 .landing__header {
   @apply flex flex-nowrap justify-between items-center px-5 py-4 bg-light-600 border-b-2 border-b-gray-300;
 }
 
 .landing__title {
-  @apply mb-0 inline-block text-xl font-medium text-yellow-500;
+  @apply mb-0 inline-block text-xl font-medium text-color-2;
 }
 
 .landing__content {
@@ -73,6 +69,6 @@ onMounted(async () => {
 }
 
 .landing__slide {
-  @apply !w-[260px] !h-54;
+  @apply !w-[167px] mr-2 md:(!w-180px mr-10px) lg:(!w-[260px] mr-0);
 }
 </style>

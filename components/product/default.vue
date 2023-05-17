@@ -1,6 +1,6 @@
 <template>
   <div class="product h-full">
-    <div class="product__thumbnail h-2/3">
+    <div class="product__thumbnail">
       <product-thumbnail-image :product="product" />
       <product-actions :product="product" @quick-view="handleQuickView" />
     </div>
@@ -37,7 +37,7 @@ const handleQuickView = (open: boolean) => (state.quickView = open);
 
 <style scoped>
 .product {
-  @apply box-border p-[20px_20px_0] relative block box-border border border-transparent max-w-[250px] transition ease hover:(border border-gray-300);
+  @apply box-border lg:p-[20px_20px_0] max-w-[168px] relative block box-border border border-transparent transition ease hover:(border border-gray-300) lg:max-w-[250px];
 }
 
 .product__thumbnail {

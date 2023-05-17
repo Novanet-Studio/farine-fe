@@ -25,16 +25,17 @@
   @apply flex relative;
 }
 .default__container {
-  @apply flex flex-1 max-w-full transition animate-ease-[cubic-bezier(0.4,0,0.2,1)];
+  /* @apply flex flex-1 max-w-full transition animate-ease-[cubic-bezier(0.4,0,0.2,1)]; */
+  @apply transition animate-ease-[cubic-bezier(0.4,0,0.2,1)];
 }
 
 .default__wrapper {
   @apply flex-auto backface-hidden flex flex-col min-h-screen max-w-full;
 }
 .default__content {
-  @apply flex-auto max-w-full;
+  @apply flex-auto;
 }
 .default__main {
-  @apply;
+  @apply px-5 lg:max-w-[1650px] mx-auto md:px-8;
 }
 </style>

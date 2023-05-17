@@ -49,7 +49,7 @@ const socialNetworks = [
 
 <style scoped>
 .widgets {
-  @apply pb-7 mx-4 lg:(mx-auto);
+  @apply pb-7 lg:(mx-4 mx-auto);
 }
 
 .widgets__wrapper {
@@ -65,7 +65,7 @@ const socialNetworks = [
 }
 
 .widgets__item {
-  @apply relative inline-flex items-center mr-[20px] gap-1;
+  @apply relative inline-flex items-center mr-[20px] gap-1 md:mr-2;
 }
 
 .widgets__link {

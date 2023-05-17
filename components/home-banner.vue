@@ -21,18 +21,16 @@
         </div>
       </div>
       <div class="banner__right">
-        <nuxt-link class="flex-1 flex">
-          <img
-            src="~/assets/img/slider/home-1/promotion-1.jpeg"
-            alt="Promotion 1"
-          />
-        </nuxt-link>
-        <nuxt-link class="h-full flex-1">
-          <img
-            src="~/assets/img/slider/home-1/promotion-2.jpeg"
-            alt="Promotion 2"
-          />
-        </nuxt-link>
+        <img
+          src="~/assets/img/slider/home-1/promotion-1.jpeg"
+          class="max-w-[50%] lg:max-w-full"
+          alt="Promotion 1"
+        />
+        <img
+          src="~/assets/img/slider/home-1/promotion-2.jpeg"
+          alt="Promotion 2"
+          class="max-w-[50%] lg:max-w-full"
+        />
       </div>
     </div>
   </div>
@@ -56,8 +54,23 @@ const sliderImages = [
 :global(.swiper-button-prev) {
   --swiper-navigation-size: 2rem;
   --swiper-navigation-color: #161824;
+  @apply transition;
+}
+
+:global(.swiper-button-next:hover),
+:global(.swiper-button-prev:hover) {
+  --swiper-navigation-color: #e36d65;
+}
+
+:deep(.swiper-button-next),
+:deep(.swiper-button-prev) {
   --swiper-navigation-sides-offset: 0;
   @apply p-8 transition hover:(bg-color-1);
+}
+
+:deep(.swiper-button-next:hover),
+:deep(.swiper-button-prev:hover) {
+  --swiper-navigation-color: #161824;
 }
 
 .banner {
@@ -65,11 +78,11 @@ const sliderImages = [
 }
 
 .banner__wrapper {
-  @apply flex flex-col flex-nowrap max-w-[1650px] mx-auto lg:flex-row;
+  @apply flex flex-col flex-nowrap lg:flex-row;
 }
 
 .banner__left {
-  @apply w-full h-full mb-4 lg:max-w-[calc(100%-390px)];
+  @apply w-[340px] min-h-[200px] h-full mb-4 md:w-full lg:(max-w-[calc(100%-390px)] w-full);
 }
 
 .banner__slider {
@@ -77,7 +90,7 @@ const sliderImages = [
 }
 
 .banner__slider-image {
-  @apply block w-full h-80 bg-center bg-cover lg:(min-h-xl);
+  @apply block w-full h-full bg-center bg-cover md:h-xl lg:(w-full min-h-xl h-80);
 }
 
 .banner__right {
