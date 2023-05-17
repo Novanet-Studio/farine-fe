@@ -4,11 +4,14 @@
       <div class="thumbnail-quick-view__content">
         <swiper :centered-slides="true" navigation :modules="[Navigation]">
           <swiper-slide
-            v-for="(image, index) in product.image"
+            v-for="(image, index) in product.images"
             :key="index"
             class="thumbnail-quick-view__slide !flex"
           >
-            <img :src="image.formats.thumbnail.url" />
+            <img
+              class="object-cover max-h-auto"
+              :src="image.formats.medium.url"
+            />
           </swiper-slide>
         </swiper>
       </div>
@@ -32,15 +35,16 @@ defineProps<{ product: ProductsMapped }>();
 }
 
 .thumbnail-quick-view {
-  @apply max-w-full w-full flex flex-row-reverse flex-nowrap justify-center items-center mb-12 mt-12 lg:max-w-[43%];
+  /* @apply max-h-full h-full; */
+  /* @apply max-w-full w-full flex flex-row-reverse flex-nowrap justify-center items-center mb-12 mt-12 lg:max-w-[43%]; */
 }
 
 .thumbnail-quick-view__figure {
-  @apply relative block flex-basis-[100%] max-w-full m-0 lg:max-w-full;
+  /* @apply relative block flex-basis-[100%] max-w-full m-0 lg:max-w-full; */
 }
 
 .thumbnail-quick-view__content {
-  @apply relative lg:pl-1;
+  /* @apply relative lg:pl-1; */
 }
 
 .thumbnail-quick-view__slide {

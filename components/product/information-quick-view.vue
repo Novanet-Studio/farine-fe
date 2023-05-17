@@ -6,9 +6,9 @@
     <div class="info-quick-view__meta">
       <p class="info-quick-view__text">
         Tipo:
-        <nuxt-link to="/shop" class="info-quick-view__link">
+        <span class="info-quick-view__link">
           {{ product.category.name }}
-        </nuxt-link>
+        </span>
       </p>
     </div>
     <h4 class="info-quick-view__price">${{ product.price }}</h4>
@@ -40,16 +40,15 @@
           </button>
         </div>
       </figure>
-      <a class="info-quick-view__btn" href="#" @click.prevent="handleAddToCart">
+      <button class="info-quick-view__btn" @click.prevent="handleAddToCart">
         Agregar al carrito
-      </a>
-      <a
+      </button>
+      <button
         class="info-quick-view__btn-alt"
-        href="#"
         @click.prevent="handleBuyNow(true)"
       >
         Comprar
-      </a>
+      </button>
     </div>
   </div>
 </template>
@@ -157,11 +156,11 @@ const handleBuyNow = (isBuyNow: boolean) => {
 }
 
 .info-quick-view__link {
-  @apply text-yellow-500 ml-2 text-capitalize;
+  @apply text-color-6 ml-2 text-capitalize;
 }
 
 .info-quick-view__price {
-  @apply mb-5 text-xl text-dark-800 font-semibold lg:text-2xl;
+  @apply mb-5 text-xl text-color-2 font-semibold lg:text-2xl;
 }
 
 .info-quick-view__divition {
@@ -193,10 +192,10 @@ const handleBuyNow = (isBuyNow: boolean) => {
 }
 
 .info-quick-view__btn {
-  @apply w-full font-bold p-4 rounded-sm flex items-center justify-center max-h-12 text-white bg-yellow-400 mx-7 mb-4 border rounded-md transition ease md:w-full lg:(text-sm mb-0) hover:bg-yellow-500;
+  @apply w-full font-bold p-4 rounded-sm flex items-center justify-center max-h-12 text-white bg-color-2 mx-7 mb-4 border rounded-md transition ease md:w-full lg:(text-xs mb-0) hover:bg-yellow-500;
 }
 
 .info-quick-view__btn-alt {
-  @apply font-bold p-4 rounded-sm flex items-center justify-center max-h-12 w-full transition ease text-yellow-500 rounded-md border border-yellow-500 md:w-auto lg:(text-sm mr-7) hover:(text-white border-transparent bg-yellow-400);
+  @apply font-bold p-4 rounded-sm flex items-center justify-center max-h-12 w-full transition ease text-color-2 rounded-md bg-color-1 md:w-auto lg:(text-xs mr-7) hover:(text-white border-transparent bg-color-2);
 }
 </style>
