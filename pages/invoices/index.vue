@@ -26,7 +26,7 @@ definePageMeta({
 }
 
 .invoices__title {
-  @apply text-2xl font-semibold text-yellow-400;
+  @apply text-2xl font-semibold text-color-2;
 }
 
 .invoices__content {

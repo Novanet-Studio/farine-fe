@@ -30,9 +30,9 @@ export default defineConfig({
     },
   },
   shortcuts: {
-    btn: 'w-full text-center py-4 inline-block text-sm border-transparent rounded-md bg-color-1 transition ease cursor-pointer hover:bg-yellow-500 active:bg-yellow-500',
+    btn: 'w-full text-center py-4 inline-block text-sm border-transparent rounded-md bg-color-1 transition ease cursor-pointer hover:(bg-color-2 bg-opacity-90) active:(bg-color-2 bg-opacity-90)',
     'btn--outline':
-      'flex justify-center border !bg-transparent rounded-md border-yellow-400 text-yellow-500 hover:(!bg-yellow-500 !border-transparent !text-white)',
+      'flex justify-center border !bg-transparent rounded-md border-color-2 text-color-2 hover:(!bg-color-2 !border-transparent !text-white)',
     'header-actions': 'flex items-center justify-between',
     'header-actions__link': 'flex relative transition ease',
     'header-actions__icon': 'text-4xl text-[2.45rem]',
@@ -52,11 +52,11 @@ export default defineConfig({
 
     // Block
     'b-header': 'text-center pb-16 md:pb-[6.25rem]',
-    'b-title': 'text-3xl font-semibold text-yellow-400 md:text-5xl',
+    'b-title': 'text-3xl font-semibold text-color-2 md:text-5xl',
     'b-content': 'flex flex-col gap-8 lg:flex-row',
     'b-left': 'flex-[0_0_100%] md:flex-[0_0_65%]',
     'b-right': 'flex-[0_0_100%] md:flex-[0_0_35%]',
-    'b-subtitle': 'text-lg text-yellow-400 mt-0 mb-6 font-bold md:mb-3',
+    'b-subtitle': 'text-lg text-color-2 mt-0 mb-6 font-bold md:mb-3',
     'b-link-wrapper': 'flex justify-between items-center',
   },
 });

@@ -1,22 +1,27 @@
 <template>
   <ul class="border border-gray-300">
     <li
-      class="border-b-2 border-b-gray-300"
+      class="border-b-2 last:border-b-gray-300"
       v-for="link in links"
       :key="link.text"
-      :class="$route.path.includes(link?.name) ? 'text-yellow-500' : ''"
+      :class="hasText(link?.name) ? 'text-color-2' : ''"
     >
       <nuxt-link
         :to="link.url"
-        class="flex items-center px-5 py-4 font-medium uppercase"
+        class="flex items-center px-5 py-4"
+        :class="hasText(link?.name) ? 'font-bold' : 'font-medium'"
       >
-        <span class="mr-3"><component :is="getIcon(link.name)" /></span>
+        <span class="mr-3"
+          ><component
+            :is="getIcon(link.name)"
+            v-bind="{ weight: hasText(link?.name) ? 'fill' : 'light' }"
+        /></span>
         {{ link.text }}
       </nuxt-link>
     </li>
     <li>
       <a
-        class="flex px-5 py-4 items-center font-medium uppercase"
+        class="flex px-5 py-4 items-center font-medium"
         href="#"
         @click.prevent="handleLogout"
       >
@@ -41,6 +46,7 @@ const global = $store.global();
 const auth = $store.auth();
 const cart = $store.cart();
 const router = useRouter();
+const route = useRoute();
 
 type Props = {
   breadInfo(path: string): void;
@@ -49,6 +55,8 @@ type Props = {
 defineProps<Props>();
 
 const links = global.getLinks;
+const hasText = (text: string) => route.path.includes(text);
+
 const handleLogout = () => {
   auth.authenticated = false;
   cart.clearCart();

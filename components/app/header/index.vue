@@ -4,7 +4,11 @@
       <div class="header__container">
         <div class="header__brand">
           <nuxt-link class="header__link" to="/">
-            <img src="~/assets/img/farine-logo.png" alt="Farine Logo" />
+            <img
+              class="w3/5 lg:w-auto"
+              src="~/assets/img/farine-logo.png"
+              alt="Farine Logo"
+            />
           </nuxt-link>
         </div>
         <div class="header__content">
@@ -77,6 +81,6 @@ onUnmounted(() => {
 }
 
 .header__content {
-  @apply lg:w-[17%];
+  @apply lg:w-[15%];
 }
 </style>

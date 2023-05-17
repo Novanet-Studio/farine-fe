@@ -66,7 +66,7 @@ onMounted(() => {
 
 <style scoped>
 .account {
-  @apply flex relative;
+  @apply flex relative bg-color-3;
 }
 
 .account__wrapper {
@@ -98,7 +98,7 @@ onMounted(() => {
 }
 
 .account__aside {
-  @apply flex-[1_1_100%] mb-8 lg:(flex-[0_0_33.333333%] mb-8);
+  @apply flex-[1_1_100%] mb-8 lg:(flex-[0_0_30.333333%] mb-8);
 }
 
 .account__content {
