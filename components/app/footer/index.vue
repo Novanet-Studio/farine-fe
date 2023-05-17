@@ -1,11 +1,17 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" :class="class">
     <div class="footer__wrapper">
-      <app-footer-widgets />
+      <app-footer-widgets v-if="showWidgets" />
       <app-footer-copyright />
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+withDefaults(defineProps<{ showWidgets?: boolean; class?: string }>(), {
+  showWidgets: true,
+});
+</script>
 
 <style scoped>
 .footer {

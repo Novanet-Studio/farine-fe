@@ -41,11 +41,11 @@ onMounted(() => {
 }
 
 .auth__link {
-  @apply text-2xl font-bold text-dark-50 first:mr-8;
+  @apply text-base font-bold text-dark-50 first:mr-8 md:text-2xl;
 }
 
 .auth__link--active {
-  @apply text-yellow-500;
+  @apply text-color-2;
 }
 
 .auth__content {

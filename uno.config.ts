@@ -30,7 +30,7 @@ export default defineConfig({
     },
   },
   shortcuts: {
-    btn: 'w-full text-center py-4 inline-block text-sm border-transparent rounded-md bg-yellow-300 transition ease cursor-pointer hover:bg-yellow-500 active:bg-yellow-500',
+    btn: 'w-full text-center py-4 inline-block text-sm border-transparent rounded-md bg-color-1 transition ease cursor-pointer hover:bg-yellow-500 active:bg-yellow-500',
     'btn--outline':
       'flex justify-center border !bg-transparent rounded-md border-yellow-400 text-yellow-500 hover:(!bg-yellow-500 !border-transparent !text-white)',
     'header-actions': 'flex items-center justify-between',
@@ -43,7 +43,7 @@ export default defineConfig({
     'input-group': 'py-3 pt-2 first:mb-4',
     'input-error': 'border-red-500',
     'auth-form__wrapper': 'bg-white p-6 max-w-[26rem] mx-auto mb-4',
-    'auth-form__title': 'text-base mb-4 text-yellow-500',
+    'auth-form__title': 'text-base mb-4 text-color-2',
     'auth-form__footer': 'py-3 mb-4 mt-2',
     form__group: 'mb-4 md:mb-10',
     'form__btn-group': 'mb-0 md:(mb-10 w-[25%])',

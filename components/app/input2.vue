@@ -4,11 +4,11 @@
       class="flex items-center border p-4 rounded-md"
       :class="[error && 'input--error', focus && 'border-yellow-400']"
     >
-      <div class="flex-0 mr-3" v-if="$slots.left">
+      <div class="mr-3" v-if="$slots.left">
         <slot name="left" />
       </div>
       <input
-        class="flex-1 outline-none"
+        class="w-4/5 md:w-full outline-none"
         :type="type"
         v-model="value"
         @focus="focus = true"
