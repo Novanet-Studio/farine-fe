@@ -25,7 +25,6 @@
         href="#"
         @click.prevent="handleLogout"
       >
-        <!-- <i class="mr-3 icon-power-switch"></i> -->
         <ph-power weight="light" class="mr-3" />
         Cerrar Sesión
       </a>
@@ -47,12 +46,6 @@ const auth = $store.auth();
 const cart = $store.cart();
 const router = useRouter();
 const route = useRoute();
-
-type Props = {
-  breadInfo(path: string): void;
-};
-
-defineProps<Props>();
 
 const links = global.getLinks;
 const hasText = (text: string) => route.path.includes(text);
