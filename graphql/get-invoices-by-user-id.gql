@@ -25,12 +25,12 @@ query GetInvoicesByUserId($id: Int!, $page: Int, $pageSize: Int) {
         createdAt
         payment_method
         payment_info {
-          name
+          nombre
           email
-          amount
-          lastname
-          confirmation
-          payment_date
+          monto
+          apellido
+          confirmacion
+          fecha_pago
         }
       }
     }

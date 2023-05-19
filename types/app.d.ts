@@ -146,12 +146,12 @@ interface InvoicesMapped extends InvoiceAtributes {
 
 // Others ...
 interface InvoicePaymentInfo {
-  first_name: string;
-  last_name: string;
+  nombre: string;
+  // last_name: string;
   email: string;
-  amount: string;
-  confirmation_id: string;
-  payment_date: string;
+  monto: string;
+  confirmacion: string;
+  fecha_pago: string;
 }
 
 interface BCVSource {
