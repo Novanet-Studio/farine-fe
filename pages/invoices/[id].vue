@@ -1,5 +1,5 @@
 <template>
-  <section class="mx-6 mx-auto">
+  <section class="ml-2 w-full">
     <invoices-detail />
     <notify />
   </section>

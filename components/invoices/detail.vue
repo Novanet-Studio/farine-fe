@@ -3,20 +3,20 @@
     <div class="ps-section--account-setting">
       <div ref="pdfSection" class="p-4 text-sm">
         <div class="ps-section__header py-3 border-b">
-          <h3 class="text-xl flex items-center gap-2 text-yellow-400">
+          <h3 class="text-xl flex items-center gap-2 text-color-2">
             Factura #{{ invoiceStore.invoice?.id_invoice_user }} -
             <!-- <strong>Successful delivery PPU</strong> -->
             <strong class="text-sm">Entrega exitosa PPU</strong>
           </h3>
         </div>
-        <div class="ps-section__content mt-4 p-4 bg-light-300">
+        <div class="ps-section__content mt-4 p-4 bg-white">
           <div class="row flex gap-6 w-full">
-            <div class="col-md-4 col-12">
+            <div class="col-md-4 col-12 w-full">
               <figure class="ps-block--invoice">
-                <figcaption class="border-b pb-2 font-bold text-yellow-400">
+                <figcaption class="border-b pb-2 mb-2 font-bold text-color-2">
                   Dirección
                 </figcaption>
-                <div class="ps-block__content mt-3">
+                <div class="ps-block__content mt-2">
                   <strong class="text-sm">
                     {{ invoiceStore.invoice?.fullName }}
                   </strong>
@@ -38,9 +38,9 @@
                 </div>
               </figure>
             </div>
-            <div class="col-md-4 col-12">
+            <div class="col-md-4 col-12 w-full">
               <figure class="ps-block--invoice">
-                <figcaption class="border-b pb-2 font-bold text-yellow-400">
+                <figcaption class="border-b pb-2 mb-2 font-bold text-color-2">
                   Estado
                 </figcaption>
                 <div class="ps-block__content flex flex-col">
@@ -52,9 +52,9 @@
                 </div>
               </figure>
             </div>
-            <div class="col-md-4 col-12">
+            <div class="col-md-4 col-12 w-full">
               <figure class="ps-block--invoice">
-                <figcaption class="border-b pb-2 font-bold text-yellow-400">
+                <figcaption class="border-b pb-2 mb-2 font-bold text-color-2">
                   Pago
                 </figcaption>
                 <div
@@ -76,7 +76,7 @@
                   <p class="text-sm">
                     Confirmacion de pago:
                     {{
-                      invoiceStore.invoice?.payment_info[0]?.confirmation ||
+                      invoiceStore.invoice?.payment_info[0]?.confirmacion ||
                       '---'
                     }}
                   </p>
@@ -96,25 +96,25 @@
                       <tr>
                         <th
                           scope="col"
-                          class="text-sm font-bold text-yellow-400 px-6 py-4 text-left"
+                          class="text-sm font-bold text-color-2 px-6 py-4 text-left"
                         >
                           Productos
                         </th>
                         <th
                           scope="col"
-                          class="text-sm font-bold text-yellow-400 px-6 py-4 text-left"
+                          class="text-sm font-bold text-color-2 px-6 py-4 text-left"
                         >
                           Precio
                         </th>
                         <th
                           scope="col"
-                          class="text-sm font-bold text-yellow-400 px-6 py-4 text-left"
+                          class="text-sm font-bold text-color-2 px-6 py-4 text-left"
                         >
                           Cantidad
                         </th>
                         <th
                           scope="col"
-                          class="text-sm font-bold text-yellow-400 px-6 py-4 text-left"
+                          class="text-sm font-bold text-color-2 px-6 py-4 text-left"
                         >
                           Monto
                         </th>
@@ -170,9 +170,9 @@
           </div>
         </div>
       </div>
-      <div class="flex gap-4 mt-8">
+      <div class="flex gap-4 mt-8 ml-8">
         <nuxt-link to="/invoices">
-          <a class="btn btn--outline">regresar</a>
+          <a class="btn px-5">regresar</a>
         </nuxt-link>
         <button
           @click="
@@ -188,7 +188,7 @@
               }
             )
           "
-          class="btn"
+          class="btn !w-32 text-color-2"
         >
           Generar PDF
         </button>
