@@ -72,7 +72,7 @@
           <h1 class="shopping-cart__title">Carrito de compras</h1>
         </header>
         <div>
-          <h3 class="empy-cart">
+          <h3 class="empy-cart text-color-2 text-center text-3xl font-bold">
             No tiene elementos agregado al carrito actualmente
           </h3>
         </div>
@@ -121,7 +121,7 @@ const loadCartProducts = async () => {
   }
 
   const productPromises = itemsId.map((id: string) =>
-    graphql<ProductsResponse>(GetProductById, { id })
+    graphql<ProductRequest>(GetProductById, { id })
   );
 
   const [response] = await Promise.all(productPromises);
@@ -151,7 +151,7 @@ onMounted(() => {
 }
 
 .shopping-cart__title {
-  @apply text-3xl font-semibold text-yellow-400 lg:text-5xl;
+  @apply text-3xl font-semibold text-color-2 lg:text-5xl;
 }
 
 .shopping-cart__link-wrapper {
@@ -159,7 +159,7 @@ onMounted(() => {
 }
 
 .shopping-cart__link {
-  @apply inline-block px-[45px] py-[15px] text-base rounded-sm bg-yellow-400 transition ease hover:bg-yellow-500 active:bg-yellow-500 cursor-pointer;
+  @apply inline-block px-[45px] py-[15px] text-base rounded-sm bg-color-2 transition ease hover:bg-opacity-90 active:bg-opacity-90 cursor-pointer;
 }
 
 .shopping-cart__footer {
