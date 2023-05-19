@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:ml-8">
+  <div class="lg:(ml-8 w-full)">
     <div class="address">
       <div class="address__content">
         <figure>
@@ -29,7 +29,7 @@
         </figure>
       </div>
       <div class="address__content">
-        <figure>
+        <figure class="mr-5">
           <figcaption class="address__figcaption">
             Dirección de envío
           </figcaption>
@@ -72,7 +72,7 @@ const { hasBilling, hasShipping } = checkout.checkAddressType();
 
 <style scoped>
 .address {
-  @apply flex flex-col gap-10 p-5 lg:(flex-row gap-5);
+  @apply flex flex-col gap-10 p-5 bg-white lg:(flex-row gap-5);
 }
 
 .address__content {
@@ -80,13 +80,13 @@ const { hasBilling, hasShipping } = checkout.checkAddressType();
 }
 
 .address__figcaption {
-  @apply mb-8 pb-3 text-xl font-semibold text-primary border-b-[1px] border-b-primary-alt;
+  @apply mb-8 pb-3 text-xl font-semibold text-color-2 border-b-[1px] border-b-primary-alt;
 }
 .address__text {
-  @apply mb-4 text-black text-sm;
+  @apply mb-4 text-color-2 text-sm;
 }
 
 .address__link {
-  @apply text-base text-yellow-400 transition ease hover:text-yellow-500;
+  @apply text-base text-color-6 transition ease hover:(text-opacity-70);
 }
 </style>

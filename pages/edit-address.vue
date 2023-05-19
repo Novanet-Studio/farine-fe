@@ -4,7 +4,7 @@
       <header class="edit-address__header">
         <h3 class="edit-address__title">Direcciones</h3>
       </header>
-      <div class="edit-address__content">
+      <div class="edit-address__content bg-white">
         <edit-address-form :type="type" />
       </div>
     </div>
@@ -47,7 +47,7 @@ const type = computed(() => {
 }
 
 .edit-address__title {
-  @apply text-2xl font-semibold text-yellow-400;
+  @apply text-2xl font-semibold text-color-2;
 }
 
 .edit-address__content {

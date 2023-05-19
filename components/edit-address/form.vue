@@ -163,7 +163,7 @@ onMounted(() => {
 }
 
 .address-form__title {
-  @apply text-2xl font-semibold text-yellow-400;
+  @apply text-2xl font-semibold text-color-2;
 }
 
 .address-form__group {
