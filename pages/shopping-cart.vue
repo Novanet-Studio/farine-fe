@@ -13,7 +13,7 @@
           <p v-else>Carrito vacio</p>
           <div class="shopping-cart__link-wrapper">
             <nuxt-link to="#" class="shopping-cart__link">
-              <ph-left weight="light" class="mr-2" />
+              <ph-arrow-left weight="light" class="mr-2" />
               Regresar
             </nuxt-link>
           </div>
@@ -82,6 +82,7 @@
 </template>
 
 <script lang="ts" setup>
+import { PhArrowLeft } from '@phosphor-icons/vue';
 import { getProductById as GetProductById } from '~/graphql';
 
 definePageMeta({
@@ -159,7 +160,7 @@ onMounted(() => {
 }
 
 .shopping-cart__link {
-  @apply inline-block px-[45px] py-[15px] text-base rounded-sm bg-color-2 transition ease hover:bg-opacity-90 active:bg-opacity-90 cursor-pointer;
+  @apply inline-flex items-center px-[45px] py-[15px] text-base rounded-sm bg-color-1 transition ease hover:bg-opacity-90 active:bg-opacity-90 cursor-pointer;
 }
 
 .shopping-cart__footer {
@@ -175,11 +176,11 @@ onMounted(() => {
 }
 
 .shopping-cart__right-wrapper {
-  @apply mb-8 px-8 py-7 bg-light-100 border;
+  @apply mb-8 px-8 py-7 border border-color-7;
 }
 
 .shopping-cart__text-wrapper {
-  @apply block mb-5 border-b border-light-700 text-dark-100;
+  @apply block mb-5 pb-5 border-b border-color-7 text-dark-100;
 }
 
 .shopping-cart__text {
@@ -191,11 +192,11 @@ onMounted(() => {
 }
 
 .shopping-cart__btn {
-  @apply !bg-transparent border border-yellow-400 mt-4 text-yellow-500 hover:(!bg-yellow-400 text-white);
+  @apply !bg-transparent border border-color-2 mt-4 text-color-2 hover:(!bg-yellow-400 text-white);
 }
 
 .cart-product__item {
-  @apply border-b border-b-light-700 pb-5 mb-5;
+  @apply border-b border-color-7 pb-5 mb-5;
 }
 
 .cart-product__wrapper {
@@ -203,7 +204,7 @@ onMounted(() => {
 }
 
 .cart-product__total {
-  @apply mb-0 text-2xl flex justify-between text-yellow-500;
+  @apply mb-0 text-2xl flex justify-between text-color-2;
 }
 
 .cart-product__amount {

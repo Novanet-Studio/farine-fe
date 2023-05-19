@@ -36,39 +36,37 @@
   <div class="flex flex-col">
     <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
       <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-        <div
-          class="overflow-hidden rounded-md shadow shadow-md shadow-gray-300"
-        >
+        <div class="overflow-hidden rounded-md">
           <table class="min-w-full">
-            <thead class="bg-yellow-200 border-b">
+            <thead class="border-b">
               <tr>
                 <th
                   scope="col"
-                  class="text-sm font-bold text-color-7 px-6 py-4 text-left lg:text-base"
+                  class="text-sm font-bold text-color-2 px-6 py-4 text-left lg:text-base"
                 >
                   Producto
                 </th>
                 <th
                   scope="col"
-                  class="text-sm font-bold text-color-7 px-6 py-4 text-left lg:text-base"
+                  class="text-sm font-bold text-color-2 px-6 py-4 text-left lg:text-base"
                 >
                   Precio
                 </th>
                 <th
                   scope="col"
-                  class="text-sm font-bold text-color-7 px-6 py-4 text-left lg:text-base"
+                  class="text-sm font-bold text-color-2 px-6 py-4 text-left lg:text-base"
                 >
                   Cantidad
                 </th>
                 <th
                   scope="col"
-                  class="text-sm font-bold text-color-7 px-6 py-4 text-left lg:text-base"
+                  class="text-sm font-bold text-color-2 px-6 py-4 text-left lg:text-base"
                 >
                   Total
                 </th>
                 <th
                   scope="col"
-                  class="text-sm font-bold text-color-7 px-6 py-4 text-left lg:text-base"
+                  class="text-sm font-bold text-color-2 px-6 py-4 text-left lg:text-base"
                 >
                   Acciones
                 </th>
@@ -76,7 +74,7 @@
             </thead>
             <tbody>
               <tr
-                class="bg-color-7 border-b transition duration-300 ease-in-out hover:bg-color-8 group"
+                class="border-b transition duration-300 ease-in-out hover:bg-color-8 group"
                 v-for="product in products"
                 :key="product.id"
               >
@@ -89,22 +87,22 @@
                   />
                 </td>
                 <td
-                  class="text-sm text-color-6 font-light px-6 py-4 whitespace-nowrap lg:text-base"
+                  class="text-sm text-color-4 font-light px-6 py-4 whitespace-nowrap lg:text-base"
                 >
                   ${{ product.price }}
                 </td>
                 <td
-                  class="text-sm text-color-6 font-light px-6 py-4 whitespace-nowrap lg:text-base"
+                  class="text-sm text-color-2 font-light px-6 py-4 whitespace-nowrap lg:text-base"
                 >
                   <quantity class="group-hover:bg-white" :product="product" />
                 </td>
                 <td
-                  class="text-sm text-color-6 font-light px-6 py-4 whitespace-nowrap lg:text-base"
+                  class="text-sm text-color-4 font-light px-6 py-4 whitespace-nowrap lg:text-base"
                 >
-                  <total-quantity :product="product" />
+                  <total-quantity class="!border-none" :product="product" />
                 </td>
                 <td
-                  class="text-sm text-color-6 font-light px-6 py-4 whitespace-nowrap lg:text-base"
+                  class="text-sm text-color-4 font-light px-6 py-4 whitespace-nowrap lg:text-base"
                 >
                   <a
                     href="#"

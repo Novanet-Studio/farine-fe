@@ -30,7 +30,14 @@ export default defineConfig({
     },
   },
   shortcuts: {
-    btn: 'w-full text-center text-color-2 font-bold py-4 inline-block text-sm border-transparent rounded-md bg-color-1 transition ease cursor-pointer hover:(bg-color-2 bg-opacity-90) active:(bg-color-2 bg-opacity-90)',
+    'border-color-1': 'border-[#feeed7]',
+    'border-color-2': 'border-[#e36d65]',
+    'border-color-3': 'border-[#f4f4f4]',
+    'border-color-4': 'border-[#282932]',
+    'border-color-5': 'border-[#161824]',
+    'border-color-6': 'border-[#0c6dce]',
+    'border-color-7': 'border-[#c0c0c0]',
+    btn: 'w-full text-center text-color-2 font-bold py-4 inline-block text-sm border-transparent rounded-md bg-color-1 transition ease cursor-pointer hover:(bg-opacity-80) active:( bg-opacity-80)',
     'btn--outline':
       'flex justify-center border !bg-transparent rounded-md border-color-2 text-color-2 hover:(!bg-color-2 !border-transparent !text-white)',
     'header-actions': 'flex items-center justify-between',
