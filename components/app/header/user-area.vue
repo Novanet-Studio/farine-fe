@@ -33,10 +33,10 @@
               {{ link.text }}
             </nuxt-link>
           </li>
-          <li class="user-area__menu-logout">
+          <li class="user-area__menu-logout hover:font-bold">
             <a
               href="#"
-              class="transition-colors ease hover:text-yellow-400"
+              class="transition-colors ease"
               @click.prevent="handleLogout"
             >
               Cerrar Sesión
@@ -98,11 +98,11 @@ const handleLogout = () => {
 }
 
 .user-area__menu-list-item {
-  @apply mb-5 transition hover:(text-yellow-400 font-bold);
+  @apply mb-5 transition hover:(font-bold);
 }
 
 .user-area__menu-link {
-  @apply pl-0 text-dark-500 transition-colors ease hover:text-yellow-400;
+  @apply pl-0 text-dark-500 transition-colors ease;
 }
 
 .user-area__menu-logout {

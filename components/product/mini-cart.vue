@@ -9,7 +9,7 @@
         href="#"
         @click.prevent="handleRemoveProductFromCart(product)"
       >
-        <ph-x weight="light" class="text-yellow-400" />
+        <ph-x weight="light" class="text-color-4" />
       </a>
       <product-title :product="product" />
       <small v-if="quantity !== null">
