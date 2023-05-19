@@ -30,6 +30,6 @@ definePageMeta({
 }
 
 .invoices__content {
-  @apply p-5;
+  @apply p-5 bg-white;
 }
 </style>

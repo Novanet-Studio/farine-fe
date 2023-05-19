@@ -8,36 +8,36 @@
             class="absolute flex w-full justify-center h-full items-center filter-drop-shadow z-10"
             v-if="isLoading"
           >
-            <loading class="!bg-yellow-400" />
+            <loading class="!bg-color-2" />
           </div>
           <table
-            class="min-w-full"
+            class="min-w-full border border-collapse"
             :class="[isLoading && 'filter-blur-[1px]']"
             v-if="hasInvoices && data?.length"
           >
-            <thead class="bg-yellow-200 border-b">
+            <thead class="border-b">
               <tr>
                 <th
                   scope="col"
-                  class="text-sm font-bold text-gray-900 px-6 py-4 text-left"
+                  class="text-sm font-bold border-r text-gray-900 px-6 py-4 text-left"
                 >
                   Nº
                 </th>
                 <th
                   scope="col"
-                  class="text-sm font-bold text-gray-900 px-6 py-4 text-left"
+                  class="text-sm font-bold border-r text-gray-900 px-6 py-4 text-left"
                 >
                   Factura
                 </th>
                 <th
                   scope="col"
-                  class="text-sm font-bold text-gray-900 px-6 py-4 text-left"
+                  class="text-sm font-bold border-r text-gray-900 px-6 py-4 text-left"
                 >
                   Fecha
                 </th>
                 <th
                   scope="col"
-                  class="text-sm font-bold text-gray-900 px-6 py-4 text-left"
+                  class="text-sm font-bold border-r text-gray-900 px-6 py-4 text-left"
                 >
                   Monto
                 </th>
@@ -57,31 +57,31 @@
                 @click="goToInvoice(item.id_invoice_user.toString(), item)"
               >
                 <td
-                  class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900"
+                  class="px-6 py-4 border-r whitespace-nowrap text-sm font-bold text-gray-900"
                 >
                   {{ item.id_invoice_user }}
                 </td>
                 <td
-                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r"
                 >
                   {{ item.payment_id }}
                 </td>
                 <td
-                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r"
                 >
                   {{ item.date }}
                 </td>
                 <td
-                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r"
                 >
                   ${{ item.amount }}
                 </td>
                 <td
-                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r"
                 >
                   <span
                     class="p-2 rounded-md text-xs"
-                    :class="item.paid ? 'bg-green-300' : 'bg-yellow-200'"
+                    :class="item.paid ? 'bg-green-300' : 'bg-orange-300'"
                     >{{ item.status }}</span
                   >
                 </td>

@@ -109,11 +109,13 @@ watch(activePage, (newVal, oldVal) => {
 
 <style>
 :root {
-  --primary-color: #e4c749;
+  --primary-color: #f5f5f5;
   --pg-item-width: 40px;
   --pg-item-height: 40px;
-  --pg-item-border-radius: 50%;
+  --pg-item-border-radius: 0;
   --pg-item-distance: 5px;
+  --pg-text-color: #e36d65;
+  --pg-item-hover-bg: #feeed7;
 }
 .paginator-container {
   display: flex;
@@ -131,10 +133,15 @@ watch(activePage, (newVal, oldVal) => {
   width: var(--pg-item-width);
   height: var(--pg-item-height);
   border-radius: var(--pg-item-border-radius);
+  color: var(--pg-text-color);
+  transition: color ease;
+}
+.paginator-item:hover:not(.disabled) {
+  background-color: var(--pg-item-hover-bg);
 }
 .paginator-item.active {
   background: var(--primary-color);
-  color: #fff;
+  color: var(--pg-text-color);
 }
 .paginator-item:not(.active, .space):active {
   color: var(--primary-color);
