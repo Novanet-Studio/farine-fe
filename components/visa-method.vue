@@ -84,10 +84,7 @@ const checkBilling = async (): Promise<CheckBillingResponse> => {
       type: AddressType.Billing,
     };
 
-    const { data } = await graphql<AddressResponse>(
-      GetAddressByIdAndType,
-      body
-    );
+    const { data } = await graphql<any>(GetAddressByIdAndType, body);
     const isDataAnArray =
       data?.addresses && Array.isArray(data.addresses?.data);
     const isDataValid = data?.addresses?.data.length;
@@ -223,12 +220,12 @@ const createInvoice = async (payment: any, products: any[]) => {
   payment.shippingAddress.home = checkout.home;
 
   const paymentInfo = {
-    name: checkout.name,
-    lastname: checkout.lastName,
+    nombre: checkout.name,
+    apellido: checkout.lastName,
     email: payment.buyerEmailAddress,
-    confirmation: payment.id,
-    amount: payment.totalMoney.amount / 100,
-    payment_date: new Date(),
+    confirmacion: payment.id,
+    monto: payment.totalMoney.amount / 100,
+    fecha_pago: new Date(),
   };
 
   const body = {
@@ -247,7 +244,7 @@ const createInvoice = async (payment: any, products: any[]) => {
     payment_method: 'squareup',
   };
 
-  const data = await graphql<CreateInvoiceResponse>(CreateInvoice, {
+  const data = await graphql<CreateInvoiceRequest>(CreateInvoice, {
     invoice: body,
   });
 
@@ -409,6 +406,6 @@ onMounted(async () => {
 }
 
 .visa__link {
-  @apply text-yellow-500;
+  @apply text-color-2;
 }
 </style>

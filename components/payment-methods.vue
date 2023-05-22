@@ -33,19 +33,19 @@ import { Tabs, Tab } from 'vue3-tabs-component';
 }
 
 :deep(.tabs-component-tabs) {
-  @apply flex gap-4;
+  @apply flex;
 }
 
 :deep(.tabs-component-tab) {
-  @apply px-4 py-3 rounded-md border text-gray-400;
+  @apply px-4 py-3 border-b text-gray-400 flex-1 text-center;
 }
 
 :deep(.is-active:not(a)) {
-  @apply px-4 py-3 rounded-md border border-yellow-500 text-yellow-500;
+  @apply px-4 py-3 border-b-2 border-dark-1 text-color-2;
 }
 
 :deep(.is-disabled:not(a)) {
-  @apply px-4 py-3 rounded-md border border-yellow-500 text-yellow-500;
+  @apply px-4 py-3 border-b-2 border-dark-1 text-color-2;
 }
 
 :deep(.tabs-component-panels) {

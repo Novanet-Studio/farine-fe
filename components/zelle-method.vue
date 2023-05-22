@@ -182,17 +182,17 @@ async function createInvoice(payment: any, products: any[]) {
 
   const paymentInfo = {
     ...payment,
-    confirmation: payment.confirmation,
+    confirmacion: payment.confirmacion,
     email: checkout.email,
   };
 
   delete paymentInfo.orderId;
 
   const data = {
-    amount: payment.amount,
+    amount: cart.amount,
     order_id: payment.orderId,
     paid: false,
-    payment_id: payment.confirmation,
+    payment_id: payment.confirmacion,
     products: filterProducts,
     user_id: +auth.user.id,
     shippingAddress: addressData,
@@ -204,7 +204,7 @@ async function createInvoice(payment: any, products: any[]) {
     payment_method: 'zelle',
   };
 
-  const result = await graphql<CreateInvoiceResponse>(CreateInvoice, {
+  const result = await graphql<CreateInvoiceRequest>(CreateInvoice, {
     invoice: data,
   });
 
@@ -230,9 +230,9 @@ const { submit } = submitter(async () => {
       orderId: crypto.randomUUID(),
       name: formData.name,
       lastname: formData.lastName,
-      confirmation: formData.confirmation.toString(),
-      amount: formData.amountPayed,
-      payment_date: formData.date,
+      confirmacion: formData.confirmation.toString(),
+      monto: formData.amountPayed,
+      fecha_pago: formData.date,
     };
 
     const invoiceItems = cart.cartItems;
@@ -257,8 +257,8 @@ async function sendInvoiceEmail(products: any[], payment: any) {
     let emailContent = '';
     // TODO! improve types
     const productItems: any[] = [];
-    const created = new Date(payment.date).toLocaleDateString();
-    const amountPayed = `$${Number(payment.amount)} USD`;
+    const created = new Date(payment.fecha_pago).toLocaleDateString();
+    const amountPayed = `$${Number(payment.monto)} USD`;
     const sendReceiptEmail = httpsCallable<string, SendEmailFn>(
       'sendReceiptEmail'
     );

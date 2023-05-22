@@ -1,16 +1,16 @@
 <template>
-  <div class="block">
+  <div class="block mt-28">
     <header class="b-header">
       <h1 class="b-title">Método de pago</h1>
     </header>
-    <div class="block__content">
+    <div class="b-content">
       <div class="b-left">
         <resume-information />
         <h4 class="b-subtitle">Selecciona el método de pago</h4>
         <payment-methods />
         <div class="b-link-wrapper">
-          <nuxt-link to="/shipping">
-            <i class="icon-arrow-left mr-2"></i>
+          <nuxt-link class="flex items-center" to="/shipping">
+            <ph-arrow-left class="mr-2" weight="light" />
             Return to shipping
           </nuxt-link>
         </div>
@@ -24,10 +24,5 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-  layout: false,
-  pageTransition: {
-    name: 'page',
-  },
-});
+import { PhArrowLeft } from '@phosphor-icons/vue';
 </script>
