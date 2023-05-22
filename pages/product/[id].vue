@@ -1,10 +1,10 @@
 <template>
-  <div class="flex w-full min-h-full mt-12">
-    <div class="mx-auto lg:w-full">
-      <transition name="page">
-        <product-detail v-if="state.product" :product="state.product" />
-      </transition>
-    </div>
+  <div
+    class="flex justify-center w-full min-h-full md:justify-start lg:(mt-12)"
+  >
+    <transition name="page">
+      <product-detail v-if="state.product" :product="state.product" />
+    </transition>
   </div>
 </template>
 

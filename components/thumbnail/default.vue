@@ -1,8 +1,8 @@
 <template>
   <client-only>
-    <div class="ps-product__thumbnail" data-vertical="true">
+    <div class="lg:(flex flex-row-reverse)" data-vertical="true">
       <figure>
-        <div class="ps-wrapper max-w-3xl">
+        <div class="w-22rem mb-4 lg:(w-25rem max-w-full)">
           <!-- Gallery-->
           <div class="ps-product__gallery">
             <swiper
@@ -12,15 +12,19 @@
               :modules="modules"
               :thumbs="{ swiper: thumbsSwiper }"
             >
-              <swiper-slide v-for="image in product.image" :key="image.id">
-                <img :src="image.url" :alt="image.alternativeText" />
+              <swiper-slide v-for="image in product.images" :key="image.id">
+                <img
+                  class="object-cover"
+                  :src="image.url"
+                  :alt="image.alternativeText"
+                />
               </swiper-slide>
             </swiper>
           </div>
         </div>
       </figure>
       <!-- Thumbnail -->
-      <div class="ps-product__variants max-w-48">
+      <div class="ps-product__variants w-20">
         <swiper
           class="swiper-thumbs"
           @swiper="setThumbsSwiper"
@@ -30,7 +34,7 @@
           watch-slides-progress
           :modules="modules"
         >
-          <swiper-slide v-for="image in product.image" :key="image.id">
+          <swiper-slide v-for="image in product.images" :key="image.id">
             <img
               class="object-contain"
               :src="image.url"
@@ -103,16 +107,16 @@ const setThumbsSwiper = (swiper: any) => {
 }
 
 .main-swiper {
-  /* height: 80%; */
+  height: 80%;
   width: 100%;
 }
 
 .swiper-thumbs {
   /* height: 20%; */
-  height: 100px;
+  height: 120px;
   width: 300px;
   box-sizing: border-box;
-  padding: 10px 0;
+  /* padding: 10px 0; */
 }
 
 .swiper-thumbs .swiper-slide {

@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <h1 class="text-3xl mb-2">{{ product.name }}</h1>
-    <!-- FIX: here is "is_sale" not "sale_price" -->
-    <h4 v-if="!!product.sale_price" class="text-2xl font-light">
-      <del class="mr-2"> $ {{ product.sale_price }}</del>
-      ${{ product.price }}
-    </h4>
-    <h4 v-else class="text-2xl font-light">${{ product.price }}</h4>
+  <div class="w-full">
+    <h1 class="text-3xl mb-2 border-b border-color-7 pb-4">
+      {{ product.name }}
+    </h1>
+    <h4 class="text-2xl font-bold text-color-2 mb-3">${{ product.price }}</h4>
+    <product-detail-description :product="product" />
   </div>
 </template>
 

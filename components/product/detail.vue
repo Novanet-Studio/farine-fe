@@ -1,15 +1,14 @@
 <template>
-  <div class="detail flex p-4 gap-4">
+  <div class="flex p-4 gap-4 w-full">
     <div
-      class="max-w-full p-6 bg-gray-100 shadow-md container relative rounded-xl flex flex-col md:flex-row lg:mx-auto"
+      class="max-w-full p-6 relative rounded-xl flex flex-col w-full md:(flex-row)"
     >
       <thumbnail-default :product="product" />
-      <section class="my-4">
-        <h3 class="text-3xl mb-4">Descripción</h3>
-        <product-detail-description :product="product" />
+      <section class="mt-10 md:(my-4 ml-8 w-full)">
+        <information-default :product="product" />
+        <!-- <product-detail-description :product="product" /> -->
       </section>
     </div>
-    <information-default :product="product" />
   </div>
 </template>
 
