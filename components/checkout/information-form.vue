@@ -226,11 +226,11 @@ onMounted(() => {
 
 <style scoped>
 .title {
-  @apply font-semibold mb-3 text-yellow-300 text-2xl;
+  @apply font-semibold mb-3 text-color-2 text-2xl;
 }
 
 .form__title {
-  @apply font-semibold mb-8 text-yellow-300 text-2xl md:mb-3;
+  @apply font-semibold mb-8 text-color-2 text-2xl md:mb-3;
 }
 
 .form__group-alt {

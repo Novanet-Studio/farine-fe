@@ -3,7 +3,7 @@
     <div class="relative mt-2" ref="target">
       <button
         type="button"
-        class="relative w-full cursor-default rounded-md bg-white py-5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 sm:text-sm sm:leading-6"
+        class="relative w-full cursor-default rounded-md bg-white py-5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-color-1 sm:text-sm sm:leading-6"
         :class="[error && 'ring-red-600']"
         aria-haspopup="listbox"
         aria-expanded="true"
@@ -73,10 +73,10 @@
           -->
 
             <li
-              class="relative cursor-default select-none py-2 pl-3 pr-9 transition ease hover:bg-yellow-600 hover:text-white"
+              class="relative cursor-default select-none py-2 pl-3 pr-9 transition ease hover:bg-color-2 hover:text-white"
               :class="
                 compareOptions(option)
-                  ? 'bg-yellow-600 text-white'
+                  ? 'bg-color-2 text-white'
                   : 'text-gray-900'
               "
               @click="
@@ -102,9 +102,7 @@
               <span
                 v-if="compareOptions(option)"
                 class="absolute inset-y-0 right-0 flex items-center pr-4 hover:text-white"
-                :class="
-                  compareOptions(option) ? 'text-white' : 'text-yellow-600'
-                "
+                :class="compareOptions(option) ? 'text-white' : 'text-color-1'"
               >
                 <ph-check class="h-5 w-5" />
               </span>

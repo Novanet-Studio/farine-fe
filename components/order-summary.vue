@@ -48,7 +48,7 @@ withDefaults(defineProps<Props>(), {
 
 <style scoped>
 .order-summary__title {
-  @apply font-semibold mb-3 text-yellow-400 text-2xl;
+  @apply font-semibold mb-3 text-color-2 text-2xl;
 }
 
 .order-summary__content {
@@ -64,7 +64,7 @@ withDefaults(defineProps<Props>(), {
 }
 
 .order-summary__strong-text {
-  @apply text-sm text-dark-200 font-semibold uppercase;
+  @apply text-sm text-color-2 font-semibold uppercase;
 }
 
 .order-summary__link {

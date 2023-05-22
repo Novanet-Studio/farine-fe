@@ -30,7 +30,7 @@ definePageMeta({
 }
 
 .checkout__title {
-  @apply text-2xl font-semibold text-yellow-400 md:text-5xl;
+  @apply text-2xl font-semibold text-color-2 md:text-5xl;
 }
 
 .checkout__content {
