@@ -173,7 +173,7 @@ onMounted(() => {
 
 <style scoped>
 .wishlist {
-  @apply mt-8 max-w-sm sm:(max-w-lg mb-24) lg:(px-7 mt-0 max-w-full);
+  @apply mt-4 max-w-sm sm:(max-w-lg mb-24) md:max-w-2xl lg:(px-7 mt-0 max-w-full);
 }
 
 .wishlist__center {

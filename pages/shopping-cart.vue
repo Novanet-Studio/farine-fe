@@ -142,7 +142,7 @@ onMounted(() => {
   @apply max-w-full;
 }
 .shopping-cart__wrapper {
-  @apply mt-8 max-w-sm md:max-w-xl lg:(px-4 mt-0 max-w-full);
+  @apply mt-8 max-w-sm md:max-w-2xl lg:(px-4 mt-0 max-w-full);
 }
 .shopping-cart__container {
   @apply w-full px-3 mx-auto lg:max-w-[1230px];

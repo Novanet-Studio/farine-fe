@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:(ml-8 w-full)">
+  <div class="w-full lg:(ml-8)">
     <div class="address">
       <div class="address__content">
         <figure>
@@ -76,7 +76,7 @@ const { hasBilling, hasShipping } = checkout.checkAddressType();
 }
 
 .address__content {
-  @apply max-w-full flex-[0_0_100%] md:(max-w-[50%] flex-[0_0_50%]);
+  @apply max-w-full flex-[0_0_100%] lg:(max-w-[50%] flex-[0_0_50%]);
 }
 
 .address__figcaption {

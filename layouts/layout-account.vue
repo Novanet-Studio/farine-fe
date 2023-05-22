@@ -86,7 +86,7 @@ onMounted(() => {
 }
 
 .account__section-wrapper {
-  @apply max-w-sm p-3 mx-auto flex sm:max-w-lg md:max-w-xl lg:(px-52 max-w-full);
+  @apply max-w-sm p-3 mx-auto flex sm:max-w-lg md:max-w-2xl lg:(px-52 max-w-full);
 }
 
 .account__section-container {
@@ -98,7 +98,7 @@ onMounted(() => {
 }
 
 .account__aside {
-  @apply flex-[1_1_100%] mb-8 lg:(flex-[0_0_30.333333%] mb-8);
+  @apply flex-[0_0_100%] mb-8 md:h-auto lg:(flex-[0_0_30.333333%] mb-8);
 }
 
 .account__content {

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div class="whitespace-nowrap md:w-full">
     <Tabs :options="{ useUrlFragmet: false }">
       <tab name="Square up">
         <visa-method />
@@ -33,7 +33,7 @@ import { Tabs, Tab } from 'vue3-tabs-component';
 }
 
 :deep(.tabs-component-tabs) {
-  @apply flex;
+  @apply flex overflow-x-scroll w-30rem max-w-30rem md:(w-full max-w-full);
 }
 
 :deep(.tabs-component-tab) {
