@@ -112,6 +112,6 @@ const handleOpenQuickView = () => {
 }
 
 .product-actions__link {
-  @apply flex justify-center items-center w-9 h-9 rounded-full transition ease hover:(bg-yellow-500 text-white);
+  @apply flex justify-center items-center w-9 h-9 rounded-full transition ease hover:(bg-color-1 text-white);
 }
 </style>
