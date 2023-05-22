@@ -60,7 +60,7 @@ export default defineConfig({
     // Block
     'b-header': 'text-center pb-16 md:pb-[6.25rem]',
     'b-title': 'text-3xl font-semibold text-color-2 md:text-5xl',
-    'b-content': 'flex flex-col gap-8 lg:flex-row',
+    'b-content': 'flex flex-col gap-8 lg:(flex-row mx-32)',
     'b-left': 'flex-[0_0_100%] md:flex-[0_0_65%]',
     'b-right': 'flex-[0_0_100%] md:flex-[0_0_35%]',
     'b-subtitle': 'text-lg text-color-2 mt-0 mb-6 font-bold md:mb-3',

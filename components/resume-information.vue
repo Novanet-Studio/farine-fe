@@ -53,6 +53,6 @@ const checkout = $store.checkout();
 }
 
 .resume__link {
-  @apply text-sm self-center text-yellow-400 max-w-40 text-right;
+  @apply text-sm self-center text-color-6 max-w-40 text-right;
 }
 </style>
