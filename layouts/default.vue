@@ -20,7 +20,24 @@
   </div>
 </template>
 
+<script lang="ts" setup>
+const route = useRoute();
+
+const maxWidth = computed(() => {
+  const includesPath = ['/nosotros', '/contacto', '/gracias'].includes(
+    route.path
+  );
+
+  return {
+    maxWidth: includesPath ? '100%' : '1650px',
+    paddingX: includesPath ? '0px' : '2rem',
+  };
+});
+</script>
+
 <style scoped>
+:root {
+}
 .default {
   @apply flex relative;
 }
@@ -33,9 +50,11 @@
   @apply flex-auto backface-hidden flex flex-col min-h-screen max-w-full;
 }
 .default__content {
-  @apply flex-auto;
+  @apply flex-auto transition ease;
 }
 .default__main {
-  @apply px-5 lg:max-w-[1650px] mx-auto md:px-8;
+  --main-max-width: v-bind(maxWidth.maxWidth);
+  --main-padding-x: v-bind(maxWidth.paddingX);
+  @apply px-5 transition ease lg:max-w-[var(--main-max-width)] mx-auto md:px-[var(--main-padding-x)];
 }
 </style>
