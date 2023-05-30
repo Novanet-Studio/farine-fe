@@ -29,7 +29,7 @@ const defaultValues = {
   loading: false,
 };
 
-export const useCart = defineStore('cart', {
+export const useCart = defineStore('farine-cart', {
   state: (): CartStore => ({
     ...defaultValues,
   }),

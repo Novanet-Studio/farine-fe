@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import links from '~/data/account-links.json';
 type Currency = '$' | '€' | 'Bs';
 
-export const useGlobal = defineStore('global', {
+export const useGlobal = defineStore('farine-global', {
   state: () => ({
     appDrawer: false,
     currentDrawerContent: null,

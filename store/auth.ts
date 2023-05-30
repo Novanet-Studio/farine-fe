@@ -27,7 +27,7 @@ const initialState = {
   authenticated: false,
 };
 
-export const useAuth = defineStore('auth', {
+export const useAuth = defineStore('farine-auth', {
   state: () => initialState as AuthState,
   actions: {
     async login(user: string, password: string): Promise<boolean> {

@@ -49,7 +49,7 @@ const defaultValues = {
   products: [],
 };
 
-export const useInvoice = defineStore('invoice', {
+export const useInvoice = defineStore('farine-invoice', {
   state: (): InvoiceStore => ({
     ...defaultValues,
   }),
