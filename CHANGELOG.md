@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.0.0 (2023-05-30)
+
+
+### Features
+
+* **firebase:** add new functions ([b767c39](https://github.com/Novanet-Studio/farine-fe/commit/b767c3974abf16de4d020290633ea64fff548e7a))
+
+
+### Bug Fixes
+
+* **custom-select:** no take default value ([494f776](https://github.com/Novanet-Studio/farine-fe/commit/494f776bf1961f2ac8c69e040d14f1fbdb4f962f))
+* invoices query and type ([c442441](https://github.com/Novanet-Studio/farine-fe/commit/c4424414343aa1c245e64e67002040b5300b6c0e))
+* rename product queries ([9efafe6](https://github.com/Novanet-Studio/farine-fe/commit/9efafe6c09bbbbd533ca6456714d9a7520a2bbc0))
+* **store:** rename all stores adding `farine` as prefix ([c2d083c](https://github.com/Novanet-Studio/farine-fe/commit/c2d083cc418e51e0acb9ffebbd8e8982faee37e4))
+* **style:** invoice table responsive ([63582bc](https://github.com/Novanet-Studio/farine-fe/commit/63582bc72d43311006a27b8d29cf180d07d63d50))
+* **style:** mini-cart icon color and user area hover on items ([a792312](https://github.com/Novanet-Studio/farine-fe/commit/a792312d35840f9e19a0317ce5b642a805b9afe0))
+* **style:** responsive for product details ([2c98eac](https://github.com/Novanet-Studio/farine-fe/commit/2c98eac53cff5cc95e722f0e4fcf3b2872c143c4))
+
 ## [2.11.0](https://github.com/Novanet-Studio/fast-ecommerce-fe/compare/v2.10.0...v2.11.0) (2023-04-20)
 
 
