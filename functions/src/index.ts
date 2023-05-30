@@ -105,8 +105,8 @@ export const sendReceiptEmail = functions.https.onRequest((req, res) => {
       const msg = {
         to: data.email,
         from: senderMail,
-        subject: `Fast-Ecommerce recibo de compra ${data.order_id}`,
-        text: 'Fast-Ecommerce recibo de compra',
+        subject: `Farine recibo de compra ${data.order_id}`,
+        text: 'Farine recibo de compra',
         html: `
       <table
       width="100%"
@@ -974,8 +974,8 @@ export const sendMerchantEmail = functions.https.onRequest((req, res) => {
       const msg = {
         to: receiverMail,
         from: senderMail,
-        subject: `Fast-Ecommerce nueva orden ${data.order_id}`,
-        text: 'Fast-Ecommerce nueva orden',
+        subject: `Farine nueva orden ${data.order_id}`,
+        text: 'Farine nueva orden',
         html: `
       <table
       width="100%"
